@@ -31,7 +31,7 @@ export default buildConfig({
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   cors: {
-    origins: ['http://localhost:3000', 'https://your-frontend-domain.com'], // Allowed frontend origins
+    origins: [`${process.env.LOCAL_FRONT_URL}`, `${process.env.WEB_FRONT_URL}`], // Allowed frontend origins
   },
   db: vercelPostgresAdapter({
     pool: {
