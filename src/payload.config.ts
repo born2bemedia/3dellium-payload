@@ -12,6 +12,7 @@ import { Media } from './collections/Media'
 import { Categories } from './collections/Categories'
 import { Products } from './collections/Products'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import Orders from './collections/Orders'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -23,7 +24,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Categories, Products],
+  collections: [Users, Media, Categories, Products, Orders],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -32,7 +33,6 @@ export default buildConfig({
   cors: {
     origins: ['http://localhost:3000', 'https://your-frontend-domain.com'], // Allowed frontend origins
   },
-  csrf: ['http://localhost:3000', 'https://your-frontend-domain.com'],
   db: vercelPostgresAdapter({
     pool: {
       connectionString: process.env.POSTGRES_URL || '',
