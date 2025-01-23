@@ -1,4 +1,4 @@
-import type { CollectionConfig, PayloadRequest } from 'payload';
+import type { CollectionConfig, PayloadRequest } from 'payload'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -8,8 +8,9 @@ export const Users: CollectionConfig = {
   auth: true,
   access: {
     read: function (args: { req: PayloadRequest }) {
-      return args.req.user?.role === 'admin';
+      return args.req.user?.role === 'admin'
     },
+    create: () => true,
   },
   fields: [
     {
@@ -67,14 +68,14 @@ export const Users: CollectionConfig = {
       required: false,
     },
     {
-      name: 'role', 
+      name: 'role',
       type: 'select',
       options: [
         { label: 'Admin', value: 'admin' },
         { label: 'Customer', value: 'customer' },
       ],
-      defaultValue: 'customer', 
+      defaultValue: 'customer',
       required: true,
     },
   ],
-};
+}
