@@ -7,7 +7,11 @@ export const Users: CollectionConfig = {
   },
   auth: {
     forgotPassword: {
-      generateEmailHTML: ({ token }) => {
+      generateEmailHTML: (args?: { token?: string }) => {
+        const token = args?.token
+        if (!token) {
+          return `<p>Error: No reset token provided.</p>`
+        }
         return `<p>Click the link below to reset your password:</p>
                 <a href="http://localhost:3000/set-password?token=${token}">Reset Password</a>`
       },
