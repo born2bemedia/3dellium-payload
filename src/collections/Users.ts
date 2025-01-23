@@ -5,7 +5,14 @@ export const Users: CollectionConfig = {
   admin: {
     useAsTitle: 'email',
   },
-  auth: true,
+  auth: {
+    forgotPassword: {
+      generateEmailHTML: ({ token }) => {
+        return `<p>Click the link below to reset your password:</p>
+                <a href="http://localhost:3000/set-password?token=${token}">Reset Password</a>`
+      },
+    },
+  },
   access: {
     read: function (args: { req: PayloadRequest }) {
       return args.req.user?.role === 'admin'
