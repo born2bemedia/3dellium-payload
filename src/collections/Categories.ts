@@ -1,4 +1,4 @@
-import type { CollectionConfig } from 'payload';
+import type { CollectionConfig } from 'payload'
 
 export const Categories: CollectionConfig = {
   slug: 'categories',
@@ -19,6 +19,12 @@ export const Categories: CollectionConfig = {
       unique: true,
     },
     {
+      name: 'icon',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Icon',
+    },
+    {
       name: 'image',
       type: 'upload',
       relationTo: 'media',
@@ -30,4 +36,4 @@ export const Categories: CollectionConfig = {
       label: 'Content',
     },
   ],
-};
+}

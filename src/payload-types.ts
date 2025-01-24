@@ -117,6 +117,7 @@ export interface Category {
   id: number;
   title: string;
   slug?: string | null;
+  icon?: (number | null) | Media;
   image?: (number | null) | Media;
   content?: {
     root: {
@@ -328,6 +329,7 @@ export interface MediaSelect<T extends boolean = true> {
 export interface CategoriesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
+  icon?: T;
   image?: T;
   content?: T;
   updatedAt?: T;
