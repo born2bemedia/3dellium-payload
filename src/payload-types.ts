@@ -146,6 +146,7 @@ export interface Product {
   title: string;
   slug?: string | null;
   image?: (number | null) | Media;
+  big_image?: (number | null) | Media;
   price?: number | null;
   category?: (number | null) | Category;
   content?: {
@@ -163,6 +164,12 @@ export interface Product {
     };
     [k: string]: unknown;
   } | null;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
   files?:
     | {
         file?: (number | null) | Media;
@@ -343,9 +350,16 @@ export interface ProductsSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   image?: T;
+  big_image?: T;
   price?: T;
   category?: T;
   content?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
   files?:
     | T
     | {

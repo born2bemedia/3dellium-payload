@@ -25,7 +25,16 @@ export const Products: CollectionConfig = {
       name: 'image',
       type: 'upload',
       relationTo: 'media',
-      label: 'Image',
+      label: 'Small cover',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'big_image',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Big cover',
       admin: {
         position: 'sidebar',
       },
@@ -48,6 +57,19 @@ export const Products: CollectionConfig = {
       name: 'content',
       type: 'richText',
       label: 'Content',
+    },
+    {
+      name: 'gallery',
+      type: 'array',
+      label: 'Image Gallery',
+      fields: [
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          label: 'Gallery Image',
+        },
+      ],
     },
     {
       name: 'files',
