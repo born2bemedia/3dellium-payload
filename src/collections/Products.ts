@@ -2,6 +2,12 @@ import type { CollectionConfig } from 'payload'
 
 export const Products: CollectionConfig = {
   slug: 'products',
+  access: {
+    read: () => true, // Allows public (unauthenticated) read access
+    create: ({ req }) => req.user?.role === 'admin', // Only allow admins to create
+    update: ({ req }) => req.user?.role === 'admin', // Only allow admins to update
+    delete: ({ req }) => req.user?.role === 'admin', // Only allow admins to delete
+  },
   fields: [
     {
       name: 'title',
