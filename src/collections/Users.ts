@@ -18,9 +18,10 @@ export const Users: CollectionConfig = {
     },
   },
   access: {
-    read: function (args: { req: PayloadRequest }) {
+    /*read: function (args: { req: PayloadRequest }) {
       return args.req.user?.role === 'admin'
-    },
+    },*/
+    read: () => true,
     create: () => true,
   },
   fields: [
