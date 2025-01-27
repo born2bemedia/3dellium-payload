@@ -91,16 +91,6 @@ export const Orders: CollectionConfig = {
       ],
     },
     {
-      name: 'trackingNumber',
-      type: 'text',
-      label: 'Tracking Number',
-    },
-    {
-      name: 'notes',
-      type: 'textarea',
-      label: 'Customer Notes',
-    },
-    {
       name: 'createdAt',
       type: 'date',
       admin: {

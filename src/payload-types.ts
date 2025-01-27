@@ -186,7 +186,7 @@ export interface Product {
 export interface Order {
   id: number;
   orderNumber: string;
-  user: number | User;
+  user?: (number | null) | User;
   items?:
     | {
         product: number | Product;
@@ -198,22 +198,13 @@ export interface Order {
   total: number;
   status: 'pending' | 'processing' | 'completed' | 'cancelled';
   paymentMethod: 'bank_transfer' | 'credit_card' | 'paypal' | 'crypto';
-  billingAddress: {
-    street: string;
-    city: string;
-    state: string;
-    zip: string;
-    country: string;
+  billingAddress?: {
+    street?: string | null;
+    city?: string | null;
+    state?: string | null;
+    zip?: string | null;
+    country?: string | null;
   };
-  shippingAddress: {
-    street: string;
-    city: string;
-    state: string;
-    zip: string;
-    country: string;
-  };
-  trackingNumber?: string | null;
-  notes?: string | null;
   createdAt: string;
   updatedAt: string;
 }
@@ -396,17 +387,6 @@ export interface OrdersSelect<T extends boolean = true> {
         zip?: T;
         country?: T;
       };
-  shippingAddress?:
-    | T
-    | {
-        street?: T;
-        city?: T;
-        state?: T;
-        zip?: T;
-        country?: T;
-      };
-  trackingNumber?: T;
-  notes?: T;
   createdAt?: T;
   updatedAt?: T;
 }
