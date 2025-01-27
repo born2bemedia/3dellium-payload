@@ -91,17 +91,6 @@ export const Orders: CollectionConfig = {
       ],
     },
     {
-      name: 'shippingAddress',
-      type: 'group',
-      fields: [
-        { name: 'street', type: 'text', required: false },
-        { name: 'city', type: 'text', required: false },
-        { name: 'state', type: 'text', required: false },
-        { name: 'zip', type: 'text', required: false },
-        { name: 'country', type: 'text', required: false },
-      ],
-    },
-    {
       name: 'trackingNumber',
       type: 'text',
       label: 'Tracking Number',
