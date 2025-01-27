@@ -69,15 +69,9 @@ export const Orders: CollectionConfig = {
     },
     {
       name: 'paymentMethod',
-      type: 'select',
-      options: [
-        { label: 'Bank Transfer', value: 'bank_transfer' },
-        { label: 'Credit Card', value: 'credit_card' },
-        { label: 'PayPal', value: 'paypal' },
-        { label: 'Crypto', value: 'crypto' },
-      ],
-      defaultValue: 'bank_transfer', // Set bank transfer as the default payment method
-      required: true,
+      type: 'text',
+      label: 'Payment method',
+      required: false,
     },
     {
       name: 'billingAddress',

@@ -197,7 +197,7 @@ export interface Order {
     | null;
   total: number;
   status: 'pending' | 'processing' | 'completed' | 'cancelled';
-  paymentMethod: 'bank_transfer' | 'credit_card' | 'paypal' | 'crypto';
+  paymentMethod?: string | null;
   billingAddress?: {
     street?: string | null;
     city?: string | null;
