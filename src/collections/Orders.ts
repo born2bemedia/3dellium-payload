@@ -99,6 +99,13 @@ export const Orders: CollectionConfig = {
       defaultValue: () => new Date().toISOString(),
     },
   ],
+  hooks: {
+    beforeChange: [
+      ({ data, req }) => {
+        console.log('Incoming data:', data) // Logs the incoming payload
+      },
+    ],
+  },
 }
 
 export default Orders
