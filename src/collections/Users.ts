@@ -23,6 +23,7 @@ export const Users: CollectionConfig = {
     },*/
     read: () => true,
     create: () => true,
+    update: () => true,
   },
   fields: [
     {
