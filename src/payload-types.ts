@@ -219,6 +219,7 @@ export interface Idea {
   title: string;
   slug?: string | null;
   image?: (number | null) | Media;
+  excerpt?: string | null;
   content?: {
     root: {
       type: string;
@@ -431,6 +432,7 @@ export interface IdeasSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   image?: T;
+  excerpt?: T;
   content?: T;
   updatedAt?: T;
   createdAt?: T;

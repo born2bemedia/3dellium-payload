@@ -34,6 +34,11 @@ export const Ideas: CollectionConfig = {
       },
     },
     {
+      name: 'excerpt',
+      type: 'text',
+      label: 'Excerpt',
+    },
+    {
       name: 'content',
       type: 'richText',
       label: 'Content',
