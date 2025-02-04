@@ -87,4 +87,29 @@ export const Products: CollectionConfig = {
       ],
     },
   ],
+  hooks: {
+    afterChange: [
+      async ({ doc }) => {
+        try {
+          const response = await fetch('https://3dellium.com/api/revalidate', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              tags: ['products'],
+            }),
+          })
+
+          if (!response.ok) {
+            console.error('Cache revalidation failed:', response.statusText)
+          } else {
+            console.log('Cache revalidation triggered successfully.')
+          }
+        } catch (error) {
+          console.error('Error triggering cache revalidation:', error)
+        }
+      },
+    ],
+  },
 }
