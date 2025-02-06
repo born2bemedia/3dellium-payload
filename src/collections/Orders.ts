@@ -6,7 +6,7 @@ export const Orders: CollectionConfig = {
     useAsTitle: 'orderNumber',
   },
   access: {
-    read: ({ req }) => !!req.user, // Allow logged-in users to read orders
+    read: () => true, // Allow logged-in users to read orders
     create: () => true, // Allow order creation
     update: ({ req }) => req.user?.role === 'admin', // Only admin can update orders
     delete: ({ req }) => req.user?.role === 'admin', // Only admin can delete orders
