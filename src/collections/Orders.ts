@@ -97,7 +97,7 @@ export const Orders: CollectionConfig = {
       name: 'invoice',
       type: 'upload',
       relationTo: 'media',
-      label: 'Invoice',
+      label: 'Invoice file',
       required: false,
       admin: {
         position: 'sidebar',
