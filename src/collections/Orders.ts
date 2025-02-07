@@ -93,6 +93,16 @@ export const Orders: CollectionConfig = {
       },
       defaultValue: () => new Date().toISOString(),
     },
+    {
+      name: 'invoice',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Invoice',
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
   ],
   hooks: {
     beforeChange: [

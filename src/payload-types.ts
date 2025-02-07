@@ -210,6 +210,7 @@ export interface Order {
     country?: string | null;
   };
   createdAt: string;
+  invoice?: (number | null) | Media;
   updatedAt: string;
 }
 /**
@@ -454,6 +455,7 @@ export interface OrdersSelect<T extends boolean = true> {
         country?: T;
       };
   createdAt?: T;
+  invoice?: T;
   updatedAt?: T;
 }
 /**
