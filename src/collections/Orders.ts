@@ -75,6 +75,12 @@ export const Orders: CollectionConfig = {
       required: false,
     },
     {
+      name: 'orderNotes',
+      type: 'text',
+      label: 'Order Notes',
+      required: false,
+    },
+    {
       name: 'billingAddress',
       type: 'group',
       fields: [
