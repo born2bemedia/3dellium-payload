@@ -67,10 +67,10 @@ export const Products: CollectionConfig = {
       },
     },
     {
-      name: 'preiew',
+      name: 'preview',
       type: 'upload',
       relationTo: 'media',
-      label: 'Preiew video',
+      label: 'Preview video',
       admin: {
         position: 'sidebar',
       },

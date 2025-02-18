@@ -153,7 +153,7 @@ export interface Product {
   big_image?: (number | null) | Media;
   price?: number | null;
   category?: (number | null) | Category;
-  preiew?: (number | null) | Media;
+  preview?: (number | null) | Media;
   content?: {
     root: {
       type: string;
@@ -413,7 +413,7 @@ export interface ProductsSelect<T extends boolean = true> {
   big_image?: T;
   price?: T;
   category?: T;
-  preiew?: T;
+  preview?: T;
   content?: T;
   gallery?:
     | T
