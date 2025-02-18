@@ -181,6 +181,13 @@ export interface Product {
         id?: string | null;
       }[]
     | null;
+  filesurl?:
+    | {
+        filename?: string | null;
+        fileurl?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -425,6 +432,13 @@ export interface ProductsSelect<T extends boolean = true> {
     | T
     | {
         file?: T;
+        id?: T;
+      };
+  filesurl?:
+    | T
+    | {
+        filename?: T;
+        fileurl?: T;
         id?: T;
       };
   updatedAt?: T;

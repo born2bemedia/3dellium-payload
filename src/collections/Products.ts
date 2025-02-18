@@ -105,6 +105,25 @@ export const Products: CollectionConfig = {
         },
       ],
     },
+    {
+      name: 'filesurl',
+      type: 'array',
+      label: 'Files bu url(for large files)',
+      fields: [
+        {
+          name: 'filename',
+          type: 'text',
+          label: 'File name',
+          required: false,
+        },
+        {
+          name: 'fileurl',
+          type: 'text',
+          label: 'File URL',
+          required: false,
+        },
+      ],
+    },
   ],
   hooks: {
     afterChange: [
