@@ -67,6 +67,15 @@ export const Products: CollectionConfig = {
       },
     },
     {
+      name: 'preiew',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Preiew video',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'content',
       type: 'richText',
       label: 'Content',
