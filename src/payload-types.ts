@@ -247,6 +247,8 @@ export interface Idea {
     };
     [k: string]: unknown;
   } | null;
+  seo_title?: string | null;
+  seo_description?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -486,6 +488,8 @@ export interface IdeasSelect<T extends boolean = true> {
   image?: T;
   excerpt?: T;
   content?: T;
+  seo_title?: T;
+  seo_description?: T;
   updatedAt?: T;
   createdAt?: T;
 }

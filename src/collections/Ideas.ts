@@ -53,6 +53,18 @@ export const Ideas: CollectionConfig = {
       type: 'richText',
       label: 'Content',
     },
+    {
+      name: 'seo_title',
+      type: 'text',
+      label: 'SEO Title',
+      required: false,
+    },
+    {
+      name: 'seo_description',
+      type: 'text',
+      label: 'SEO Description',
+      required: false,
+    },
   ],
   hooks: {
     afterChange: [
