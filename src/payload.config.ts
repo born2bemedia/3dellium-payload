@@ -65,7 +65,7 @@ export default buildConfig({
     }),
   ],
   email: nodemailerAdapter({
-    defaultFromName: 'Your Company Name',
+    defaultFromName: '3Dellium',
     defaultFromAddress: 'noreply@3dellium.com',
     transportOptions: {
       service: 'gmail',
