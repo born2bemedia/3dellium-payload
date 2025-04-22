@@ -44,6 +44,16 @@ export const Ideas: CollectionConfig = {
       },
     },
     {
+      name: 'label',
+      type: 'text',
+      label: 'Label',
+      required: false,
+      unique: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'excerpt',
       type: 'text',
       label: 'Excerpt',
